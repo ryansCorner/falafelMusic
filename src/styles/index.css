@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, serif !important;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  }
+  
+ 
