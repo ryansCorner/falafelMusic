@@ -9,6 +9,7 @@
     "lodash.template": "^4.5.0",
     "mixin-deep": "^2.0.1",
     "node": "^12.13.0",
+    "node-sass": "^4.13.0",
     "nodemon": "^1.19.4",
     "query-string": "^6.8.3",
     "react": "^16.11.0",
