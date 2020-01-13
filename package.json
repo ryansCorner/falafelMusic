@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:3000y",
+  "proxy": "http://localhost:3000",
   "name": "falafel_music",
   "version": "0.1.0",
   "private": true,

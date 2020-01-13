@@ -52,8 +52,9 @@ class Layout extends React.Component {
         }
         // Spotify.getUser(this.state.accessToken, this.onUserSuccess, this.onUserError)
     }
+
     onUserSuccess = evt => {
-        console.log('get user profile data success')
+        console.log('get user profile data success', evt)
         this.setState({
             ...this.state,
             country: evt.country,
@@ -62,7 +63,7 @@ class Layout extends React.Component {
             userUrl: evt.external_urls.spotify,
             followerNum: evt.followers.total,
             userHref: evt.href,
-            proilePic: evt.images[0].url,
+            proilePic: 'https://developer.spotify.com/assets/branding-guidelines/icon1@2x.png',
             accountType: evt.product,
             userUri: evt.uri,
             spotifyId: evt.id,
