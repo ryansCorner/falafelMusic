@@ -140,6 +140,43 @@ class Layout extends React.Component {
 
     onArtistClick = evt => {
         console.log("(@*#)(%*#)@(*%)#(      ARTIST CLICKED ", evt.target.getAttribute('data-item'))
+        var id = evt.target.getAttribute('data-item')
+        Spotify.getArtist(id, this.state.accessToken, this.onArtistSuccess, this.onArtistError)
+        Spotify.getArtistAlbums(id, this.state.accessToken, this.onArtistAlbumsSuccess, this.onArtistAlbumsError)
+        Spotify.getArtistTopTracks(id, this.state.accessToken, this.onArtistTopTracksSuccess, this.onArtistTopTracksError)
+        Spotify.getRelatedArtists(id, this.state.accessToken, this.onArtistRelatedArtistsSuccess, this.onArtistRelatedArtistsError)
+    }
+
+    onArtistAlbumsSuccess = response => {
+        console.log('artist albums success', response)
+    }
+
+    onArtistAlbumsError = err => {
+        console.log('artist albums error', err)
+    }
+
+    onArtistTopTracksSuccess = response => {
+        console.log('artist top Tracks success', response)
+    }
+
+    onArtistTopTracksError = err => {
+        console.log('artist top Tracks error', err)
+    }
+
+    onArtistRelatedArtistsSuccess = response => {
+        console.log('artist RelatedArtists success', response)
+    }
+
+    onArtistRelatedArtistsError = err => {
+        console.log('artist RelatedArtists error', err)
+    }
+
+    onArtistSuccess = response => {
+        console.log('artist  success', response)
+    }
+
+    onArtistError = err => {
+        console.log('artist  error', err)
     }
 
     onSearchClicked = evt => {

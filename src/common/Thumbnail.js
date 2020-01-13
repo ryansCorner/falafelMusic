@@ -4,7 +4,9 @@ import { withRouter } from "react-router-dom"
 
 const Thumbnail = props => {
     return (
-        <a onClick={props.toggleFalafelDrawer} >
+        <a
+        // onClick={props.toggleFalafelDrawer} 
+        >
             <div className='movie-thumbnail-card' id={props.containerId} >
                 <img src={props.src}
                     variant="thumbnail"

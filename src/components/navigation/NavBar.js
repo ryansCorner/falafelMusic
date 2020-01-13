@@ -22,7 +22,11 @@ const NavBar = props => {
 
                 <Col xs={6} md={4}>
 
-                    <Navbar.Brand href="" className="nav-brand-link" onClick={() => window.location = 'https://falafel-spotify-server.herokuapp.com/loginSpotify'}>
+                    <Navbar.Brand
+                        href="" className="nav-brand-link"
+                        onClick={() => window.location = 'https://falafel-spotify-server.herokuapp.com/loginSpotify'}
+                    // onClick={() => window.location = 'https://localhost:3000/loginSpotify'}
+                    >
                         falafel
 
                     </Navbar.Brand>                <Navbar.Toggle aria-controls="basic-navbar-nav" />

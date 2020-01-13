@@ -161,5 +161,65 @@ class Spotify {
 
     static getMyTopTracks
 
+    static getArtist(artistID, authToken, onSuccess, onError) {
+        // console.log('this is the auth token being passed for top tracks', authToken)
+        const id = artistID
+        const url = `https://api.spotify.com/v1/artists/${id}`;
+        const myAuthToken = authToken;
+        const headers = {
+            clientId: process.env.DB_SPOTIFY_CLIENT_ID,
+            response_type: 'code',
+            redirectUri: process.env.DB_REDIRECT_URI
+        };
+        axios.get(`https://api.spotify.com/v1/artists/${id}`, { headers: { 'Authorization': 'Bearer ' + myAuthToken } })
+            .then(response => onSuccess(response.data))
+            .catch(err => onError(err))
+    }
+
+    static getArtistAlbums(artistID, authToken, onSuccess, onError) {
+        // console.log('this is the auth token being passed for top tracks', authToken)
+        const id = artistID
+        const url = `https://api.spotify.com/v1/artists/${id}/albums`;
+        const myAuthToken = authToken;
+        const headers = {
+            clientId: process.env.DB_SPOTIFY_CLIENT_ID,
+            response_type: 'code',
+            redirectUri: process.env.DB_REDIRECT_URI
+        };
+        axios.get(`https://api.spotify.com/v1/artists/${id}/albums`, { headers: { 'Authorization': 'Bearer ' + myAuthToken } })
+            .then(response => onSuccess(response.data))
+            .catch(err => onError(err))
+    }
+
+    static getArtistTopTracks(artistID, authToken, onSuccess, onError) {
+        // console.log('this is the auth token being passed for top tracks', authToken)
+        const id = artistID
+        const url = `https://api.spotify.com/v1/artists/${id}/top-tracks`;
+        const myAuthToken = authToken;
+        const headers = {
+            clientId: process.env.DB_SPOTIFY_CLIENT_ID,
+            response_type: 'code',
+            redirectUri: process.env.DB_REDIRECT_URI
+        };
+        axios.get(`https://api.spotify.com/v1/artists/${id}/top-tracks`, { headers: { 'Authorization': 'Bearer ' + myAuthToken } })
+            .then(response => onSuccess(response.data))
+            .catch(err => onError(err))
+    }
+
+    static getRelatedArtists(artistID, authToken, onSuccess, onError) {
+        // console.log('this is the auth token being passed for top tracks', authToken)
+        const id = artistID
+        const url = `https://api.spotify.com/v1/artists/${id}/related-artists`;
+        const myAuthToken = authToken;
+        const headers = {
+            clientId: process.env.DB_SPOTIFY_CLIENT_ID,
+            response_type: 'code',
+            redirectUri: process.env.DB_REDIRECT_URI
+        };
+        axios.get(`https://api.spotify.com/v1/artists/${id}/related-artists`, { headers: { 'Authorization': 'Bearer ' + myAuthToken } })
+            .then(response => onSuccess(response.data))
+            .catch(err => onError(err))
+    }
+
 }
 export default Spotify
