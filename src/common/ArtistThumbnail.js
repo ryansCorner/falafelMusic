@@ -2,18 +2,17 @@ import React from "react"
 import { withRouter } from "react-router-dom"
 
 
-const Thumbnail = props => {
-    console.log('playlist thumbnail props', props)
+const ArtistThumbnail = props => {
     return (
         <a
-            onClick={props.toggleFalafelDrawer}
+        // onClick={props.toggleFalafelDrawer}
         >
             <div className='movie-thumbnail-card' id={props.containerId} >
                 <img src={props.src}
                     variant="thumbnail"
                     id={props.id}
                     data-item={props.id}
-                    // onClick={props.onArtistClick}
+                    onClick={props.onArtistClick}
                     ref={props.ref}
                     className={props.active == props.id ? "movie-thumbnail-active item" : "movie-thumbnail"}
                     alt={props.title}
@@ -27,4 +26,4 @@ const Thumbnail = props => {
     )
 }
 
-export default withRouter(Thumbnail)
+export default withRouter(ArtistThumbnail)

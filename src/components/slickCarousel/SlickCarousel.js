@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom"
 import NextArrow from "./arrows/NextArrow";
 import PrevArrow from "./arrows/PrevArrow";
 import Thumbnail from "../../common/Thumbnail";
+import ArtistThumbnail from '../../common/ArtistThumbnail'
 import './Sliders.scss'
 
 
@@ -59,7 +60,7 @@ const SlickCarousel = props => {
                     props.topArtists.map((artist, idx) => {
                         return (
                             <div key={idx}>
-                                <Thumbnail
+                                <ArtistThumbnail
                                     toggleFalafelDrawer={props.toggleFalafelDrawer}
                                     ref={props.ref}
                                     active={props.active}

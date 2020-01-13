@@ -34,6 +34,19 @@ const FalafelDrawer = props => {
                             />
 
                         </Carousel.Item>
+                        <Carousel.Item>
+                            <DrawerFirstSlide
+                                onShowtimeClick={props.onShowtimeClick}
+                                backgroundPath={props.backgroundPath}
+                                videoPath={props.videoPath}
+                                activePlaylistTracks={props.activePlaylistTracks}
+                                activeItem={props.activeItem}
+                                activePlaylistCover={props.activePlaylistCover}
+                                onTrackClick={props.onTrackClick}
+
+                            />
+
+                        </Carousel.Item>
                         {/* <Carousel.Item>
                             <DrawerSecondSlide
                 activeTixRow={props.activeTixRow}
