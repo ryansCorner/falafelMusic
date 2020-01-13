@@ -194,14 +194,14 @@ class Spotify {
     static getArtistTopTracks(artistID, authToken, onSuccess, onError) {
         // console.log('this is the auth token being passed for top tracks', authToken)
         const id = artistID
-        const url = `https://api.spotify.com/v1/artists/${id}/top-tracks`;
+        const url = `https://api.spotify.com/v1/artists/${id}/top-tracks?country=US`;
         const myAuthToken = authToken;
         const headers = {
             clientId: process.env.DB_SPOTIFY_CLIENT_ID,
             response_type: 'code',
             redirectUri: process.env.DB_REDIRECT_URI
         };
-        axios.get(`https://api.spotify.com/v1/artists/${id}/top-tracks`, { headers: { 'Authorization': 'Bearer ' + myAuthToken } })
+        axios.get(`https://api.spotify.com/v1/artists/${id}/top-tracks?country=US`, { headers: { 'Authorization': 'Bearer ' + myAuthToken } })
             .then(response => onSuccess(response.data))
             .catch(err => onError(err))
     }
