@@ -49,7 +49,7 @@ const NavBar = props => {
                 </Col>
             </Navbar>
             <Row className="drawer-row"
-                style={{ backgroundImage: `url("${props.activePlaylistCover}")`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed', filter: `alpha('opacity=0.6') ` }}
+                style={{ backgroundImage: `url("${props.activeCover}")`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed', filter: `alpha('opacity=0.6') ` }}
             >
                 <FalafelDrawer
                     activeTixRow={props.activeTixRow}
@@ -64,9 +64,9 @@ const NavBar = props => {
                     backgroundPath={props.backgroundPath}
                     open={props.falafelOpen}
                     videoPath={props.videoPath}
-                    activePlaylistTracks={props.activePlaylistTracks}
+                    activeTracks={props.activeTracks}
                     activeItem={props.activeItem}
-                    activePlaylistCover={props.activePlaylistCover}
+                    activeCover={props.activeCover}
                     onTrackClick={props.onTrackClick}
                 />
                 {/* </div> */}

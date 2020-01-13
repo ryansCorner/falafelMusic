@@ -33,8 +33,9 @@ class Layout extends React.Component {
             open: false,
             falafelOpen: false,
             active: false,
-            activePlaylistTracks: null,
+            activeTracks: null,
             activeItem: null,
+            activeCover: null,
         }
         this.onClickRef = React.createRef();
         this.toggleFalafelDrawer = this.toggleFalafelDrawer.bind(this);
@@ -140,7 +141,16 @@ class Layout extends React.Component {
 
     onArtistClick = evt => {
         console.log("(@*#)(%*#)@(*%)#(      ARTIST CLICKED ", evt.target.getAttribute('data-item'))
+        console.log("*(*#@&$)(*#@&)$(*#@&N this is our ACTIVE item ", evt.target.variant)
         var id = evt.target.getAttribute('data-item')
+        this.setState({
+            ...this.state,
+            open: false,
+            falafelOpen: true,
+            active: id,
+            progressBarOneActive: true,
+            activeItem: evt.target.variant,
+        })
         Spotify.getArtist(id, this.state.accessToken, this.onArtistSuccess, this.onArtistError)
         Spotify.getArtistAlbums(id, this.state.accessToken, this.onArtistAlbumsSuccess, this.onArtistAlbumsError)
         Spotify.getArtistTopTracks(id, this.state.accessToken, this.onArtistTopTracksSuccess, this.onArtistTopTracksError)
@@ -149,6 +159,7 @@ class Layout extends React.Component {
 
     onArtistAlbumsSuccess = response => {
         console.log('artist albums success', response)
+
     }
 
     onArtistAlbumsError = err => {
@@ -157,6 +168,11 @@ class Layout extends React.Component {
 
     onArtistTopTracksSuccess = response => {
         console.log('artist top Tracks success', response)
+        this.setState({
+            ...this.state,
+            activeTracks: response.tracks,
+
+        })
     }
 
     onArtistTopTracksError = err => {
@@ -173,6 +189,12 @@ class Layout extends React.Component {
 
     onArtistSuccess = response => {
         console.log('artist  success', response)
+        this.setState({
+            ...this.state,
+            activeItem: response,
+            activeCover: response.images[2].url
+
+        })
     }
 
     onArtistError = err => {
@@ -216,7 +238,7 @@ class Layout extends React.Component {
         console.log('get current playlist cover success', evt)
 
         this.setState({
-            activePlaylistCover: evt[0].url
+            activeCover: evt[0].url
         })
     }
 
@@ -229,8 +251,8 @@ class Layout extends React.Component {
         this.setState({
             ...this.state,
             activeItem: evt,
-            activePlaylistTracks: evt.tracks.items,
-            activePlaylistCover: evt.images[0].url
+            activeTracks: evt.tracks.items,
+            activeCover: evt.images[0].url
 
         })
     }
@@ -306,10 +328,11 @@ class Layout extends React.Component {
                                             onClick={this.onSearchClicked}
                                             onChange={this.onChange}
                                             time={this.state.time}
-                                            activePlaylistTracks={this.state.activePlaylistTracks}
+                                            activeTracks={this.state.activeTracks}
                                             activeItem={this.state.activeItem}
-                                            activePlaylistCover={this.state.activePlaylistCover}
+                                            activeCover={this.state.activeCover}
                                             onTrackClick={this.onTrackClick}
+
                                         />
                                     </header>
                                 </Col>

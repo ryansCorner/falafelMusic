@@ -9,7 +9,8 @@ import TheaterLineBreak from "../../../common/TheaterLineBreak";
 
 
 
-const FirstSlide = props => {
+const ArtistSlide = props => {
+    console.log('artist slide props', props)
 
     const millisToMinutesAndSeconds = (millis) => {
         var minutes = Math.floor(millis / 60000);
@@ -17,15 +18,15 @@ const FirstSlide = props => {
         return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
     }
     const mapTracks = props.activeTracks.map((tracks, idx) => {
-        console.log('@#*)$(*#)(*#$)(*$)*#)*$)#(*)#$@*#$*)', tracks.track.id)
+        console.log('@#*)$(*#)(*#$)(*$)*#)*$)#(*)#$@*#$*)', tracks.id)
         var trax = tracks.track
-        var minutes = millisToMinutesAndSeconds(tracks.track.duration_ms)
+        var minutes = millisToMinutesAndSeconds(tracks.duration_ms)
         return (
-            <tr key={idx} onClick={props.onTrackClick} data-item={tracks.track.id}>
-                <td data-item={tracks.track.id}>{tracks.track.name}</td>
-                <td data-item={tracks.track.id}>{tracks.track.album.artists[0].name}</td>
-                <td data-item={tracks.track.id}>{tracks.track.album.name}</td>
-                <td data-item={tracks.track.id}>{minutes}</td>
+            <tr key={idx} onClick={props.onTrackClick} data-item={tracks.id}>
+                <td data-item={tracks.id}>{tracks.name}</td>
+                <td data-item={tracks.id}>{tracks.album.artists[0].name}</td>
+                <td data-item={tracks.id}>{tracks.album.name}</td>
+                <td data-item={tracks.id}>{minutes}</td>
             </tr>
         )
     })
@@ -39,7 +40,7 @@ const FirstSlide = props => {
 
                     <div className="trailer-iframe">
                         <h1> {props.activeItem.name}</h1>
-                        <h3>{props.activeItem.tracks.items.length} songs</h3>
+                        <h3>{props.activeItem.followers.total} followers</h3>
                         {/* <Image
                             src={props.activePlaylistCover}
                         /> */}
@@ -81,4 +82,4 @@ const FirstSlide = props => {
     )
 }
 
-export default withRouter(FirstSlide)
+export default withRouter(ArtistSlide)

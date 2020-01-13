@@ -2600,9 +2600,9 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5, classnames@^2.2.6:
+classNames@^2.2.5, classNames@^2.2.6:
   version "2.2.6"
-  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+  resolved "https://registry.yarnpkg.com/classNames/-/classNames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
 clean-css@4.2.x:
@@ -8742,7 +8742,7 @@ react-bootstrap@^1.0.0-beta.14:
     "@restart/context" "^2.1.4"
     "@restart/hooks" "^0.3.11"
     "@types/react" "^16.8.23"
-    classnames "^2.2.6"
+    classNames "^2.2.6"
     dom-helpers "^5.1.2"
     invariant "^2.2.4"
     keycode "^2.2.0"
@@ -8918,7 +8918,7 @@ react-slick@^0.25.2:
   resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.25.2.tgz#56331b67d47d8bcfe2dceb6acab1c8fd5bd1f6bc"
   integrity sha512-8MNH/NFX/R7zF6W/w+FS5VXNyDusF+XDW1OU0SzODEU7wqYB+ZTGAiNJ++zVNAVqCAHdyCybScaUB+FCZOmBBw==
   dependencies:
-    classnames "^2.2.5"
+    classNames "^2.2.5"
     enquire.js "^2.1.6"
     json2mq "^0.2.0"
     lodash.debounce "^4.0.8"

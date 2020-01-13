@@ -5,6 +5,7 @@ import NextArrow from "./arrows/NextArrow";
 import PrevArrow from "./arrows/PrevArrow";
 import Thumbnail from "../../common/Thumbnail";
 import ArtistThumbnail from '../../common/ArtistThumbnail'
+import TrackThumbnail from '../../common/TrackThumbnail'
 import './Sliders.scss'
 
 
@@ -80,7 +81,7 @@ const SlickCarousel = props => {
                     props.topTracks.map((track, idx) => {
                         return (
                             <div key={idx} className="card-slider">
-                                <Thumbnail
+                                <TrackThumbnail
                                     backdropPath={track.backdrop_path}
                                     ref={props.ref}
                                     active={props.active}

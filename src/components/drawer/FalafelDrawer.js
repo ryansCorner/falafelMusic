@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom"
 import { Col, Row, Carousel, } from "react-bootstrap";
 import DrawerFirstSlide from "./slides/FirstSlide";
 import "./FalafelDrawer.css"
+import ArtistSlide from "./slides/ArtistSlide";
 // import DrawerSecondSlide from "./DrawerSecondSlide";
 
 
@@ -18,7 +19,7 @@ const FalafelDrawer = props => {
     return (
         <React.Fragment>
             <div id={props.activeSlide} className="drawer" >
-                {props.open && props.activePlaylistTracks && (
+                {props.open && props.activeTracks && (
 
                     <Carousel controls={props.activeSlide == 'first' ? false : true} activeIndex={props.activeIndex} interval='1000000' direction={props.direction} onSelect={props.handleSelect} style={{ maxHeight: "45vh" }} data-ride='none'>
                         <Carousel.Item>
@@ -26,7 +27,7 @@ const FalafelDrawer = props => {
                                 onShowtimeClick={props.onShowtimeClick}
                                 backgroundPath={props.backgroundPath}
                                 videoPath={props.videoPath}
-                                activePlaylistTracks={props.activePlaylistTracks}
+                                activeTracks={props.activeTracks}
                                 activeItem={props.activeItem}
                                 activePlaylistCover={props.activePlaylistCover}
                                 onTrackClick={props.onTrackClick}
@@ -35,16 +36,15 @@ const FalafelDrawer = props => {
 
                         </Carousel.Item>
                         <Carousel.Item>
-                            <DrawerFirstSlide
+                            <ArtistSlide
                                 onShowtimeClick={props.onShowtimeClick}
                                 backgroundPath={props.backgroundPath}
                                 videoPath={props.videoPath}
-                                activePlaylistTracks={props.activePlaylistTracks}
+                                activeTracks={props.activeTracks}
                                 activeItem={props.activeItem}
-                                activePlaylistCover={props.activePlaylistCover}
-                                onTrackClick={props.onTrackClick}
+                                activeArtistCover={props.activeArtistCover}
+                                onTrackClick={props.onTrackClick} />
 
-                            />
 
                         </Carousel.Item>
                         {/* <Carousel.Item>
