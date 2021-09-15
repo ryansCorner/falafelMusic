@@ -18,7 +18,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "react-slick": "^0.25.2",
-    "set-value": "^3.0.1"
+    "set-value": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start && cd --prefix /oauth-bridge-template/ yarn start",
